@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AvatarCard from './components/AvatarCard';
 import CreateAvatarModal from './components/CreateAvatarModal';
-import { useMousePosition } from './useMousePosition';
 
 function App() {
   const [avatars, setAvatars] = useState([]);
@@ -9,25 +8,9 @@ function App() {
   const [editingAvatar, setEditingAvatar] = useState(null);
   const [userName, setUserName] = useState('User');
   const [loading, setLoading] = useState(true);
-  const { x, y } = useMousePosition(); // Get mouse position
 
-  // Function to generate human-like animated avatars
   const generateAnimatedAvatar = (seed) => {
     return `https://api.dicebear.com/6.x/avataaars/svg?seed=${seed}`;
-  };
-
-  // Calculate parallax effect values based on mouse position
-  const getParallaxStyle = (index) => {
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    const moveX = (x - centerX) / 50;
-    const moveY = (y - centerY) / 50;
-    
-    // Stagger the effect based on card index
-    return {
-      transform: `translate(${moveX * (index % 2 === 0 ? 1 : -1)}px, ${moveY * (index % 3 === 0 ? 0.5 : 1)}px)`,
-      transition: 'transform 0.3s ease-out'
-    };
   };
 
   useEffect(() => {
@@ -109,7 +92,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="container mx-auto px-4 py-8">
-        <header className="mb-10 text-center relative overflow-hidden">
+        <header className="mb-6 text-center relative overflow-hidden bg-gradient-to-r from-gray-50 via-indigo-50 to-blue-50">
           {/* Animated background elements */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
             <div className="absolute -top-20 -left-20 w-64 h-64 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
@@ -119,9 +102,10 @@ function App() {
 
           {/* Main header content */}
           <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800 mb-4 animate-fade-in-up">
-              Welcome to Your Avatar Dashboard
-            </h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800 mb-4 animate-fade-in-up transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-blue-800">
+           Welcome to Your Avatar Dashboard
+          </h1>
+
             <p className="text-xl md:text-2xl text-gray-600 animate-fade-in-up animation-delay-300">
               Glad to have you back, <span className="font-semibold text-indigo-600 animate-pulse">{userName}</span>!
             </p>
@@ -136,7 +120,10 @@ function App() {
         </header>
 
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-700 mb-6">Your Human Avatars</h2>
+        <h2 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 mb-6">
+          Your Avatars 
+        </h2>
+
 
           {loading ? (
             <div className="flex justify-center items-center h-48">
@@ -152,14 +139,12 @@ function App() {
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {avatars.map((avatar, index) => (
-                    <div 
-                      key={avatar.id}
-                      style={getParallaxStyle(index)} // Apply parallax effect
-                    >
+                    <div key={avatar.id}>
                       <AvatarCard
                         avatar={avatar}
                         onEdit={() => handleEditAvatar(avatar)}
                         onDelete={() => handleDeleteAvatar(avatar.id)}
+                        className={`animate-fade-in-up animation-delay-${index * 200}`}
                       />
                     </div>
                   ))}
