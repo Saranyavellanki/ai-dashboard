@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add to your index.css or App.css */
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Smooth transitions for all animated properties */
+.transition-all {
+  transition-property: all;
+}
