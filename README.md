@@ -3,7 +3,6 @@
 A visually engaging React application that allows users to create, view, edit, and delete custom avatars using the DiceBear Avataaars API. Designed with a clean UI and subtle animations, this dashboard is perfect for users who want to manage personal or team avatars with ease.
 
 
-
 ## Features
 
 -  Create, edit, and delete avatars dynamically
