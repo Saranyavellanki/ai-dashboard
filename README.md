@@ -2,7 +2,7 @@
 
 A visually engaging React application that allows users to create, view, edit, and delete custom avatars using the DiceBear Avataaars API. Designed with a clean UI and subtle animations, this dashboard is perfect for users who want to manage personal or team avatars with ease.
 
----
+
 
 ## Features
 
@@ -11,13 +11,11 @@ A visually engaging React application that allows users to create, view, edit, a
 -  Stylish and animated UI with glowing effects
 -  Fully responsive design for desktop and mobile
 
----
 
 ## 📸 Preview
 
 Check out the live site: [Avatar Dashboard Demo](https://avatron-coral.vercel.app/)
 
----
 
 ## Tech Stack
 
@@ -25,16 +23,8 @@ Check out the live site: [Avatar Dashboard Demo](https://avatron-coral.vercel.ap
 - **API**: [Dicebear Avataaars](https://www.dicebear.com/styles/avataaars/)
 - **State Management**: React Hooks (`useState`, `useEffect`)
 
----
-
----
 
 ## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js >= 14
-- npm or yarn
 
 ### Installation
 
@@ -58,7 +48,6 @@ Visit [http://localhost:3000](http://localhost:3000) to view the app.
 npm run build
 ```
 
----
 
 ##  Customization
 
@@ -66,7 +55,6 @@ npm run build
 -  Add custom animation delays or styles in `tailwind.config.js`
 -  Modify default avatars or user data in `App.jsx`
 
----
 
 ## Dependencies
 
@@ -76,7 +64,6 @@ npm run build
 - postcss
 - autoprefixer
 
----
 
 ##  Deployment
 
@@ -84,12 +71,9 @@ Deployed  app easily with:
 
 - [Vercel](https://vercel.com/)
 
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
 
----
 
 
