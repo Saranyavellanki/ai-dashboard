@@ -15,6 +15,8 @@ A visually engaging React application that allows users to create, view, edit, a
 
 Check out the live site: [Avatar Dashboard Demo](https://avatron-coral.vercel.app/)
 
+<img width="941" alt="image" src="https://github.com/user-attachments/assets/09e1dd68-b81f-4e19-b3cb-8a924bfd5acc" />
+
 
 ## Tech Stack
 
